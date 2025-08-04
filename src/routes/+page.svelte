@@ -1,3 +1,20 @@
+<script lang="ts">
+  import { onMount } from 'svelte';
+  let sectionRef: HTMLElement;
+  let isVisible = false;
+
+  onMount(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) isVisible = true;
+      },
+      { threshold: 0.1 }
+    );
+    if (sectionRef) observer.observe(sectionRef);
+    return () => observer.disconnect();
+  });
+</script>
+
 <svelte:head>
 	<title>Aksh Sharma | Full-Stack Engineer</title>
 </svelte:head>
@@ -5,7 +22,7 @@
 <!-- Hero Section -->
 <section class="text-center pb-20 space-y-6 bg-background rounded-2xl shadow-inner">
 	<h1 class="text-5xl font-bold tracking-tight text-primary">
-		Hi, I'm <span class="text-[#b7006e]">Aksh</span>.
+		Hi, I'm <span class="text-[#ff0199]">Aksh</span>.
 	</h1>
 	<p class="text-lg text-secondary max-w-xl mx-auto">
 		From operational planning to product roadmaps — I have built systems, lead teams, and delivered results under pressure.	</p>
@@ -34,18 +51,41 @@
 	</p>
 </section>
 
-<!-- Tech Stack Section -->
-<section class="mt-16 px-6 py-12 bg-[#111] text-center rounded-2xl border border-white/10 shadow-md">
-	<h2 class="text-2xl font-semibold mb-6 text-primary">Tech Stack</h2>
-	<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto text-sm text-white">
-		<div class="bg-[#1a1a1a] border border-white/10 p-4 rounded-xl shadow text-secondary">
-			SvelteKit / Tailwind CSS
-		</div>
-		<div class="bg-[#1a1a1a] border border-white/10 p-4 rounded-xl shadow text-accent">
-			TypeScript / Supabase
-		</div>
-		<div class="bg-[#1a1a1a] border border-white/10 p-4 rounded-xl shadow text-primary">
-			APIs / Auth / Deployment
-		</div>
-	</div>
+<section
+  bind:this={sectionRef}
+  class="reveal {isVisible ? 'visible' : ''} mt-16 px-6 py-12 bg-[#111] text-center rounded-2xl border border-white/10 shadow-md"
+>
+  <h2 class="text-2xl font-semibold mb-6 text-primary">How I Lead Projects</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto text-sm text-white mb-10">
+    <div class="bg-background border border-white/10 p-6 rounded-xl shadow text-secondary">
+      <h3 class="text-lg font-semibold mb-2">Strategic Planning</h3>
+      <p>Aligning project outcomes with stakeholder vision, balancing scope, time, and risk from day one.</p>
+    </div>
+    <div class="bg-background border border-white/10 p-6 rounded-xl shadow text-accent">
+      <h3 class="text-lg font-semibold mb-2">Agile Execution</h3>
+      <p>Driving iterative progress with adaptive workflows, team accountability, and clear KPIs.</p>
+    </div>
+    <div class="bg-background border border-white/10 p-6 rounded-xl shadow text-primary">
+      <h3 class="text-lg font-semibold mb-2">Human-Centered Leadership</h3>
+      <p>Fostering cohesion, communication, and sustainability in high-performance teams.</p>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold text-accent mb-4">Project Management in Action</h3>
+
+  <ul class="max-w-3xl mx-auto text-white space-y-4 text-left text-base px-2">
+    <li>
+      <span class="text-primary font-semibold">✓ Led a multinational artillery information system</span><br>
+      Coordinated 400+ personnel across NATO forces with robust planning and information architecture.
+    </li>
+    <li>
+      <span class="text-primary font-semibold">✓ Delivered $20,000+ in charitable fundraising</span><br>
+      Managed logistics, volunteer engagement, and stakeholder reporting for a national campaign.
+    </li>
+    <li>
+      <span class="text-primary font-semibold">✓ Transitioned into full-stack PM with technical fluency</span><br>
+      Bridged leadership and software development to guide secure, scalable products from idea to delivery.
+    </li>
+  </ul>
 </section>
