@@ -18,7 +18,7 @@
 </ScrollReveal>
 
 <!-- Fireplan Section -->
-<ScrollReveal className="mt-16 px-6 py-2 bg-[#111] rounded-2xl border border-white/10 shadow-md text-white">
+<ScrollReveal className="mt-8 px-12 py-6 bg-[#111] rounded-2xl border border-white/10 shadow-md text-white">
   <h2 class="text-2xl font-semibold mb-6 text-accent text-center">Fireplan: Career Trajectory</h2>
   <!-- Ident Line -->
   <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm mb-8 border-solid border-2 rounded-2xl p-2">
@@ -258,7 +258,5 @@
 <!-- CTA Section -->
 <ScrollReveal className="mt-20 mb-10 text-center space-y-4">
   <h2 class="text-2xl font-semibold text-accent">Let’s build something that matters.</h2>
-  <a href="/contact" class="inline-block px-6 py-3 bg-accent text-white rounded-full font-medium transition hover:brightness-110 hover:shadow-glow">
-    Get in Touch
-  </a>
+  		<a href="/contact" class="px-6 py-3 bg-accent text-black bg-[#1f8fff] rounded-full font-medium shadow-sm transition duration-200 hover:brightness-110 hover:shadow-glow"> Get in Touch</a>
 </ScrollReveal>

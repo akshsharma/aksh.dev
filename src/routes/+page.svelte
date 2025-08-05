@@ -65,8 +65,8 @@
       Managed logistics, volunteer engagement, and stakeholder reporting for a national campaign.
     </li>
     <li>
-      <span class="text-primary font-semibold">✓ Transitioned into full-stack PM with technical fluency</span><br>
-      Bridged leadership and software development to guide secure, scalable products from idea to delivery.
+      <span class="text-primary font-semibold">✓ Transitioning into full-stack PM with technical fluency</span><br>
+      Bridging leadership and software development to guide secure, scalable products from idea to delivery.
     </li>
   </ul>
 </section>
