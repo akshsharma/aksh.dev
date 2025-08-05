@@ -11,9 +11,9 @@ const config: Config = {
     extend: {
       colors: {
         // Shared across both themes
-        primary: '#00ff84',
-        secondary: '#1f8fff',  // overridden in light mode via CSS vars
-        accent: '#ff0099',
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',  // overridden in light mode via CSS vars
+        accent: 'var(--color-accent)',
 
         // Named for dynamic use via CSS variables
         text: 'var(--color-text)',
