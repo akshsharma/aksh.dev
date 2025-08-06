@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
+	import NavBar from '$lib/NavBar.svelte';
 	import '../app.css'
 
 	let darkMode = true;
@@ -42,20 +43,7 @@
 </svelte:head>
 
 <div class="min-h-screen bg-background text-text font-sans transition-colors duration-300">
-	<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-[#0d0d0d] border-b border-white/10 backdrop-blur">
-  <!-- Logo -->
-  <a href="/" class="text-xl font-bold text-primary hover:text-accent transition duration-200">
-    Aksh Sharma
-  </a>
-
-  <!-- Navigation Links -->
-  <div class="flex items-center gap-6 text-sm font-medium text-white">
-    <a class="transition-all duration-200 text-white hover:text-accent transform hover:-translate-y-0.5 hover:scale-105 nav-link" href="/" >Home</a>
-    <a class="nav-link transition-all duration-200 text-white hover:text-accent transform hover:-translate-y-0.5 hover:scale-105" href="/about" >About</a>
-    <a class="nav-link transition-all duration-200 text-white hover:text-accent transform hover:-translate-y-0.5 hover:scale-105" href="/blog" >Blog</a>
-    <a class="nav-link transition-all duration-200 text-white hover:text-accent transform hover:-translate-y-0.5 hover:scale-105" href="/contact" >Contact</a>
-  </div>
-</nav>
+<NavBar > </NavBar>
 
 	<main class="pt-24 px-6 max-w-6xl mx-auto">
 		<slot />
