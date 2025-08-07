@@ -110,7 +110,7 @@
 		</div>
 	</ScrollReveal> -->
 
-	<ScrollReveal className="grid items-center gap-10 sm:grid-cols-2">
+	<ScrollReveal className=" items-center gap-10 ">
 		<div>
 			<h3 class="text-primary mb-2 text-3xl font-bold">Featured Research</h3>
 
