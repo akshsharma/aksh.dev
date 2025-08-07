@@ -2,8 +2,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { invalidate } from '$app/navigation';
-    import { Mail, Linkedin, Github} from 'lucide-svelte';
-
+	import { Mail, Linkedin, Github } from 'lucide-svelte';
 
 	let name = '';
 	let email = '';
@@ -14,8 +13,7 @@
 	let success: string | null = null;
 	let error: string | null = null;
 
-	const validateEmail = (email: string) =>
-		/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+	const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 	const handleSubmit = async () => {
 		if (!name || !email || !message) {
@@ -58,9 +56,11 @@
 	<title>Contact Me</title>
 </svelte:head>
 
-<section class="min-h-screen flex items-center justify-center px-4 py-20 bg-[#0d0d0d] text-white">
+<section class="flex min-h-screen items-center justify-center bg-[#0d0d0d] px-4 py-20 text-white">
 	<div class="w-full max-w-2xl space-y-8">
-		<h1 class="text-5xl font-extrabold text-center bg-gradient-to-r from-[#00ff84] to-[#ff0099] bg-clip-text text-transparent">
+		<h1
+			class="bg-gradient-to-r from-[#00ff84] to-[#ff0099] bg-clip-text text-center text-5xl font-extrabold text-transparent"
+		>
 			Let's Connect!
 		</h1>
 
@@ -72,18 +72,18 @@
 			<!-- Anti-spam -->
 			<input type="text" bind:value={honeypot} class="hidden" autocomplete="off" />
 
-			<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 				<input
 					type="text"
 					placeholder="Your Name *"
 					bind:value={name}
-					class="w-full p-3 rounded-xl bg-black border border-white/10 focus:outline-none focus:ring-2 focus:ring-[#00ff84] transition"
+					class="w-full rounded-xl border border-white/10 bg-black p-3 transition focus:ring-2 focus:ring-[#00ff84] focus:outline-none"
 				/>
 				<input
 					type="email"
 					placeholder="Your Email *"
 					bind:value={email}
-					class="w-full p-3 rounded-xl bg-black border border-white/10 focus:outline-none focus:ring-2 focus:ring-[#1f8fff] transition"
+					class="w-full rounded-xl border border-white/10 bg-black p-3 transition focus:ring-2 focus:ring-[#1f8fff] focus:outline-none"
 				/>
 			</div>
 
@@ -91,55 +91,60 @@
 				type="text"
 				placeholder="Subject (optional)"
 				bind:value={subject}
-				class="w-full p-3 rounded-xl bg-black border border-white/10 focus:outline-none focus:ring-2 focus:ring-[#ff0099] transition"
+				class="w-full rounded-xl border border-white/10 bg-black p-3 transition focus:ring-2 focus:ring-[#ff0099] focus:outline-none"
 			/>
 
 			<textarea
 				placeholder="Your Message *"
 				bind:value={message}
-				class="w-full h-40 p-3 rounded-xl bg-black border border-white/10 focus:outline-none focus:ring-2 focus:ring-[#00ff84] resize-none transition"
+				class="h-40 w-full resize-none rounded-xl border border-white/10 bg-black p-3 transition focus:ring-2 focus:ring-[#00ff84] focus:outline-none"
 			></textarea>
 
 			<button
 				type="submit"
-				class="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-[#ff0099] to-[#1f8fff] text-black font-bold shadow-md hover:brightness-125 hover:shadow-lg transition disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-1 transform duration-200 ease-in-out"
+				class="w-full transform rounded-xl bg-gradient-to-r from-[#ff0099] to-[#1f8fff] px-6 py-3 font-bold text-black shadow-md transition duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-50"
 				disabled={submitting}
 			>
 				{#if submitting}
 					<span class="animate-pulse">Sending...</span>
 				{:else}
-					 Send Message
+					Send Message
 				{/if}
 			</button>
 
 			{#if success}
-				<p class="text-[#00ff84] text-center font-medium">{success}</p>
+				<p class="text-center font-medium text-[#00ff84]">{success}</p>
 			{:else if error}
-				<p class="text-[#ff0099] text-center font-medium">{error}</p>
+				<p class="text-center font-medium text-[#ff0099]">{error}</p>
 			{/if}
-            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
-	<a
-		href="mailto:aksh.ad@outlook.com"
-		class="group inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/10 bg-black hover:bg-[#0d0d0d] transition hover:shadow-lg hover:text-[#00ff84] hover:-translate-y-1 transform  duration-200 ease-in-out"
-	>
-		<Mail class="w-5 h-5 text-[#00ff84] group-hover:animate-pulse" />
-		<span>Send me an Email</span>
-	</a>
+			<div class="mt-10 flex flex-col items-center justify-center gap-4 text-sm sm:flex-row">
+				<a
+					href="mailto:aksh.ad@outlook.com"
+					class="group inline-flex transform items-center gap-2 rounded-xl border border-white/10 bg-black px-5 py-3 transition duration-200 ease-in-out hover:-translate-y-1 hover:bg-[#0d0d0d] hover:text-[#00ff84] hover:shadow-lg"
+				>
+					<Mail class="h-5 w-5 text-[#00ff84] group-hover:animate-pulse" />
+					<span>Send me an Email</span>
+				</a>
 
-	<a
-		href="https://www.linkedin.com/in/yourlinkedin/"
-		target="_blank"
-		rel="noopener noreferrer"
-		class="group inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/10 bg-black hover:bg-[#0d0d0d] transition hover:shadow-lg hover:text-[#1f8fff] hover:-translate-y-1 transform duration-200 ease-in-out"
-	>
-		<Linkedin class="w-5 h-5 text-[#1f8fff] group-hover:animate-pulse" />
-		<span>Connect on LinkedIn</span>
-	</a>
-    <a class="group inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/10 bg-black hover:bg-[#0d0d0d] transition hover:shadow-lg hover:text-[#ff0099] hover:-translate-y-1 transform  duration-200 ease-in-out" href="https://github.com/akshsharma/" target="_blank" rel="noopener noreferrer">
-        <Github class="w-5 h-5 text-[#ff0099] group-hover:animate-pulse" />
-        <span>Check out my GitHub</span>
-    </a>
-</div>
+				<a
+					href="https://www.linkedin.com/in/yourlinkedin/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group inline-flex transform items-center gap-2 rounded-xl border border-white/10 bg-black px-5 py-3 transition duration-200 ease-in-out hover:-translate-y-1 hover:bg-[#0d0d0d] hover:text-[#1f8fff] hover:shadow-lg"
+				>
+					<Linkedin class="h-5 w-5 text-[#1f8fff] group-hover:animate-pulse" />
+					<span>Connect on LinkedIn</span>
+				</a>
+				<a
+					class="group inline-flex transform items-center gap-2 rounded-xl border border-white/10 bg-black px-5 py-3 transition duration-200 ease-in-out hover:-translate-y-1 hover:bg-[#0d0d0d] hover:text-[#ff0099] hover:shadow-lg"
+					href="https://github.com/akshsharma/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Github class="h-5 w-5 text-[#ff0099] group-hover:animate-pulse" />
+					<span>Check out my GitHub</span>
+				</a>
+			</div>
 		</form>
 	</div>
 </section>

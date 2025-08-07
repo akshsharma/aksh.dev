@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import NavBar from '$lib/NavBar.svelte';
-	import '../app.css'
+	import '../app.css';
 
 	let darkMode = true;
 
@@ -25,7 +25,6 @@
 			document.documentElement.classList.remove('dark');
 		}
 	}
-	
 </script>
 
 <!-- <style>
@@ -39,13 +38,13 @@
   </style> -->
 
 <svelte:head>
-	<link rel="icon" href="/favicon.png" type="image/png">
+	<link rel="icon" href="/favicon.png" type="image/png" />
 </svelte:head>
 
-<div class="min-h-screen bg-background text-text font-sans transition-colors duration-300">
-<NavBar > </NavBar>
+<div class="bg-background text-text min-h-screen font-sans transition-colors duration-300">
+	<NavBar></NavBar>
 
-	<main class="pt-24 px-6 max-w-6xl mx-auto">
+	<main class="mx-auto max-w-6xl px-6 pt-24">
 		<slot />
 	</main>
 
@@ -54,7 +53,11 @@
 		<div>© {new Date().getFullYear()} Aksh Sharma. Built with SvelteKit.</div>
 		<div class="mt-2 flex justify-center gap-4">
 			<a href="https://github.com/akshsharma" target="_blank" class="hover:text-white">GitHub</a>
-			<a href="https://linkedin.com/in/aksh-sharma-a47466b8/" target="_blank" class="hover:text-white">LinkedIn</a>
+			<a
+				href="https://linkedin.com/in/aksh-sharma-a47466b8/"
+				target="_blank"
+				class="hover:text-white">LinkedIn</a
+			>
 			<a href="mailto:aksh.ad@outlook.com" class="hover:text-white">Email</a>
 		</div>
 	</footer>
