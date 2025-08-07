@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ProjectCard from '$lib/ProjectCard.svelte';
 	import ScrollReveal from '$lib/ScrollReveal.svelte';
+	import paper from '$lib/assets/Exploring_the_Differences_in_Human_and_Automated_Test_Generation.pdf';
 
 	const gridItems = [
 		{
@@ -109,7 +110,7 @@
 		</div>
 	</ScrollReveal> -->
 
-	<ScrollReveal class="grid items-center gap-10 sm:grid-cols-2">
+	<ScrollReveal className="grid items-center gap-10 sm:grid-cols-2">
 		<div>
 			<h3 class="text-primary mb-2 text-3xl font-bold">Featured Research</h3>
 
@@ -146,7 +147,7 @@
 					</div>
 				</div>
 				<a
-					href="/src/lib/assets/Exploring_the_Differences_in_Human_and_Automated_Test_Generation.pdf"
+					href={paper}
 					target="_blank"
 					rel="noopener"
 					class="mt-6 inline-block rounded-xl border border-white/10 bg-[#00ff84]/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#00ff84]/20"

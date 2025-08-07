@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ScrollReveal from '$lib/ScrollReveal.svelte';
+	import photo from '$lib/assets/portrait.jpeg';
 </script>
 
 <svelte:head>
@@ -43,7 +44,7 @@
 		<!-- Right side: photo -->
 		<div class="flex justify-center md:flex-1">
 			<img
-				src="/src/lib/assets/portrait.jpeg"
+				src={photo}
 				alt="Aksh Sharma"
 				class="h-52 w-52 rounded-full border-4 object-cover shadow-[0_0_40px_#00ff84aa] md:h-64 md:w-64"
 			/>
