@@ -127,7 +127,7 @@
 				</a>
 
 				<a
-					href="https://www.linkedin.com/in/yourlinkedin/"
+					href="https://www.linkedin.com/in/aksh-sharma-a47466b8/"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="group inline-flex transform items-center gap-2 rounded-xl border border-white/10 bg-black px-5 py-3 transition duration-200 ease-in-out hover:-translate-y-1 hover:bg-[#0d0d0d] hover:text-[#1f8fff] hover:shadow-lg"
